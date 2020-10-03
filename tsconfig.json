@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "diagnostics": true
+    },
+    "files": [],
+    "references": [
+        {
+            "path": "./tsconfig.build.json"
+        },
+        {
+            "path": "./tsconfig.app.json"
+        }
+    ]
+}

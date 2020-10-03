@@ -1,0 +1,4 @@
+interface DocumentEventMap
+{
+    DOMContentLoaded : Event
+}

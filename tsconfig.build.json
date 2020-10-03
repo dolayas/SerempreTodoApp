@@ -1,0 +1,16 @@
+{
+    "extends": "./tsconfig.shared.json",
+    "compilerOptions": {
+        "composite": true,
+        "types": ["webpack-dev-server"]
+    },
+    "include": [
+        "config/**/*.ts",
+        "config/**/*.json"
+    ],
+    "exclude": [
+        "node_modules",
+        "src",
+        "test"
+    ]
+}

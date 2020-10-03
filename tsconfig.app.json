@@ -1,0 +1,69 @@
+{
+    "compilerOptions": {
+        "baseUrl": "./",
+        "composite": true,
+        "jsx": "react",
+        "jsxFactory": "createElement",
+        "lib": [
+            "DOM",
+            "DOM.Iterable",
+            "ESNext",
+            "ESNext.Array",
+            "ESNext.AsyncIterable",
+            "ESNext.BigInt",
+            "ESNext.Intl",
+            "ESNext.Promise",
+            "ESNext.String",
+            "ESNext.Symbol"
+        ],
+        "module": "ESNext",
+        "paths": {
+            "@app/assets/*": [
+                "src/assets/*"
+            ],
+            "@app/core/*": [
+                "src/app/core/*"
+            ],
+            "@app/environments": [
+                "src/environments/index.ts"
+            ],
+            "@app/features/*": [
+                "src/features/*"
+            ],
+            "@app/lib/*": [
+                "src/lib/*"
+            ],
+            "@app/root": [
+                "src/app/index"
+            ],
+            "@app/shared/*": [
+                "src/app/shared/*"
+            ],
+            "@app/store": [
+                "src/app/store/index.ts"
+            ],
+            "@app/store/*": [
+                "src/app/store/*"
+            ],
+            "@app/styles/*": [
+                "src/styles/*"
+            ]
+        },
+        "types": [
+            "node",
+            "googlemaps"
+        ]
+    },
+    "exclude": [
+        "node_modules",
+        "src/**/*.worker.ts",
+        "test",
+        "config"
+    ],
+    "extends": "./tsconfig.shared.json",
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "typings/**/*.d.ts"
+    ]
+}

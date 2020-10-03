@@ -1,0 +1,8 @@
+{
+    "display": "standalone",
+    "icons": [],
+    "name": "Web Application",
+    "orientation": "any",
+    "short_name": "Web App",
+    "start_url": "/"
+}

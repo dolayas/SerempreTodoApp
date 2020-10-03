@@ -1,0 +1,69 @@
+{
+    "build": {
+        "configurations": {
+            "production": {
+                "bundles": [],
+                "compress": true,
+                "extractCss": true,
+                "fileReplacements": [
+                    {
+                        "replace": "src/environments/environment.ts",
+                        "with": "src/environments/environment.prod.ts"
+                    }
+                ],
+                "optimization": false,
+                "sourceMap": true,
+                "verbose": true,
+                "publicPath" : "/SerempreTodoApp"
+            }
+        },
+        "options": {
+            "aliases": {
+                "@app/assets": "src/assets",
+                "@app/styles": "src/styles",
+                "react-dom": "@hot-loader/react-dom",
+                "rxjs": "rxjs/_esm2015"
+            },
+            "assets": [
+                "manifest.json",
+                {
+                    "from": "assets",
+                    "to": "assets"
+                }
+            ],
+            "index": "src/index.html",
+            "main": "src/main.tsx",
+            "outputPath": "build/web-application",
+            "polyfills": "src/polyfills.ts",
+            "scripts": [
+                "node_modules/react-hot-loader/patch.js"
+            ],
+            "stylePreprocessorOptions": {
+                "includePaths": [
+                    "./src/styles"
+                ]
+            },
+            "styles": [
+                "src/styles.scss"
+            ],
+            "tsConfig": "tsconfig.app.json",
+            "verbose": false
+        }
+    },
+    "serve": {
+        "options": {
+            "allowedHosts": [],
+            "compress": true,
+            "historyApiFallback": true,
+            "host": "localhost",
+            "hot": false,
+            "liveReload": true,
+            "open": false,
+            "port": 4200,
+            "ssl": false,
+            "sslCa": "",
+            "sslCert": "",
+            "sslKey": ""
+        }
+    }
+}
