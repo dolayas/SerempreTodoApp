@@ -4,9 +4,7 @@ import { default as MiniCssExtractPlugin } from "mini-css-extract-plugin"
 import * as Sass from "sass"
 import { default as SpeedMeasurePlugin } from "speed-measure-webpack-plugin"
 import { default as TerserPlugin } from "terser-webpack-plugin"
-import {
-    Configuration, HashedModuleIdsPlugin, NormalModuleReplacementPlugin, Plugin
-} from "webpack"
+import { Configuration, NormalModuleReplacementPlugin, Plugin } from "webpack"
 import { merge } from "webpack-merge"
 import { GenerateSW } from "workbox-webpack-plugin"
 
@@ -166,6 +164,7 @@ export default (_env : NodeJS.ProcessEnv, args : Record<string, any>) : Configur
                     ]
                 },
                 {
+                    exclude : /\.(s(a|c)ss|css)$/,
                     test : /\.module\.(s(a|c)ss|css)$/,
                     use :
                     [
@@ -216,10 +215,8 @@ export default (_env : NodeJS.ProcessEnv, args : Record<string, any>) : Configur
         optimization :
         {
             concatenateModules : true,
-            minimize : mode === "production",
-            minimizer : mode === "production"
+            minimizer : webpackMode === "production"
                 ? [
-                    new HashedModuleIdsPlugin (),
                     new TerserPlugin ({
                         extractComments : false,
                         sourceMap : false,
@@ -251,7 +248,7 @@ export default (_env : NodeJS.ProcessEnv, args : Record<string, any>) : Configur
         plugins :
         [
             ...(configurations.compress && [ new CompressionPlugin () ]) || [],
-            ...(mode === "development" && developmentPlugins) || productionPlugins
+            ...(webpackMode === "development" && developmentPlugins) || productionPlugins
         ],
         stats : configurations.verbose ? verboseWebpackOutputOptions : webpackOutputOptions
     }

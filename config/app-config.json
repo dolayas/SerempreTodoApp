@@ -3,7 +3,7 @@
         "configurations": {
             "production": {
                 "bundles": [],
-                "compress": true,
+                "compress": false,
                 "extractCss": true,
                 "fileReplacements": [
                     {
@@ -14,7 +14,7 @@
                 "optimization": false,
                 "sourceMap": true,
                 "verbose": true,
-                "publicPath" : "/SerempreTodoApp"
+                "publicPath" : "/"
             }
         },
         "options": {
